@@ -120,9 +120,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"src/App.js":[function(require,module,exports) {
 var nombre = document.querySelector("#nombre-input");
 var form = document.querySelector("saludador-form");
+var p = document.querySelector("#respuesta");
+var idioma = document.querySelector("#idioma-select");
 form.addEventListener("submit", function (event) {
-  alert("Hola" + nombre.value);
+  event.preventDefault();
+  console.log("Entro a submit del form");
+  console.log("idioma selecciona" + idioma.value);
+  p.innerHTML = saludar(nombre.value);
 });
+
+function saludar(nombre) {
+  return "Hola" + nombre;
+}
 },{}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -155,7 +164,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50753" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49872" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

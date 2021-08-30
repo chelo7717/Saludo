@@ -2,10 +2,17 @@
   <body>
     <h1>Hola</h1>
     <form id="saludador-form">
-    <label for= "nombre-input">Tu nombre</label>
+    <label for= "nombre-input">Tu nombre:</label>
     <input type="text" id="nombre-input"/>
-    <input type="submit" value="saludar"/>
+    <form id="edad-form"></form>
+    <label for= "edad-input">Tu edad:</label>
+    <input type="text" id="edad-input"/>
+    <select id="idioma-select">
+      <option value="espanol">Español</option>
+      <option value="ingles">Ingles</option>
+    </select> 
   </form>
+  <input type="submit" value="saludar"/>
     <script src="./src/index.js"></script>
   </body>
 </html>
