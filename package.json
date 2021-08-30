@@ -1,0 +1,23 @@
+{
+  "name": "saludador",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chelo7717/Saludo.git"
+  },
+  "author": "Marcelo salinas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chelo7717/Saludo/issues"
+  },
+  "homepage": "https://github.com/chelo7717/Saludo#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
