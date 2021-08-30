@@ -119,19 +119,34 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"src/App.js":[function(require,module,exports) {
 var nombre = document.querySelector("#nombre-input");
-var form = document.querySelector("saludador-form");
+var edad = document.querySelector("#edad-input");
+;
+var genero = document.querySelector("genero-select");
 var p = document.querySelector("#respuesta");
 var idioma = document.querySelector("#idioma-select");
+var form = document.querySelector("saludador-form");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  console.log("Entro a submit del form");
-  console.log("idioma selecciona" + idioma.value);
-  p.innerHTML = saludar(nombre.value);
-});
+  var edad_int = parseInt(edad.value);
+  var mensaje = "";
 
-function saludar(nombre) {
-  return "Hola" + nombre;
-}
+  if (idioma.value === "espanol") {
+    mensaje = "Hola";
+  } else {
+    mensaje = "Hello";
+  }
+
+  if (edad_int > 30) {
+    if (genero.value === "Masculino") {
+      mensaje += " Sr ";
+    } else {
+      mensaje += " Sra ";
+    }
+  }
+
+  mensaje += " " + nombre.value;
+  alert(mensaje);
+});
 },{}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -164,7 +179,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49872" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49177" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

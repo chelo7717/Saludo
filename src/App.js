@@ -1,16 +1,27 @@
 const nombre= document.querySelector("#nombre-input");
-const form = document.querySelector("saludador-form");
+const edad= document.querySelector("#edad-input");;
+const genero = document.querySelector("genero-select");
 const p = document.querySelector("#respuesta");
 const idioma= document.querySelector("#idioma-select");
+const form = document.querySelector("saludador-form");
 
-form.addEventListener("submit",event =>{
+form.addEventListener("submit",(event) =>{
     event.preventDefault();
-    console.log("Entro a submit del form");
-    console.log("idioma selecciona"+ idioma.value);
-    p.innerHTML=saludar(nombre.value);
+    const edad_int =parseInt(edad.value);
+
+    let mensaje="";
+    if(idioma.value=== "espanol"){
+        mensaje="Hola";
+    }else{
+        mensaje="Hello";
+    }
+    if(edad_int>30){
+        if(genero.value=== "Masculino"){
+            mensaje += " Sr ";
+        }else{
+            mensaje += " Sra ";
+        }
+    }
+    mensaje += " " + nombre.value;
+    alert(mensaje);
 });
-
-
-function saludar(nombre){
-    return "Hola"+nombre;
-}
